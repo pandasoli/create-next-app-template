@@ -1,3 +1,5 @@
+<div align='center'>
+
 # Initial Next App - Template
 
 To use type:
@@ -6,3 +8,5 @@ To use type:
   # or
   npm install
 ```
+
+</div>
