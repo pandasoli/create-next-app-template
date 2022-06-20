@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 
 import { Container, Contents } from '../styles/_app'
 import { GlobalStyle } from '../styles/globals'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const App = ({ Component, pageProps }: AppProps) =>
@@ -10,11 +11,9 @@ const App = ({ Component, pageProps }: AppProps) =>
     <Head>
       <title>Initial Next App - Template</title>
     </Head>
-    {/* <Header/> */}
 
     <Contents>
       <Component { ...pageProps }/>
-      {/* <Footer/> */}
     </Contents>
 
     <GlobalStyle/>

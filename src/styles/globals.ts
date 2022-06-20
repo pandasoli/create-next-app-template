@@ -2,61 +2,95 @@ import { createGlobalStyle } from 'styled-components'
 
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/poppins-regular.ttf');
+  }
+
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 
-    font-family: sans-serif;
-    color: var(--font-cl);
-    font-weight: normal;
-    line-height: 1.33;
-    font-size: min(4.2vw, 1.06rem);
-    text-rendering: optimizeLegibility;
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
+    --primary-font-cl: #f2f7f4;
 
-    image-rendering: optimizeQuality;
-    
-    list-style: none;
-    appearance: none;
-    outline: none;
-    border: none;
-    transition: all .2s;
-    background-color: transparent;
+    --primary-cl: #20c967;
+    --primary-cl-light: #34db7a;
+    --white: #fff;
+    --red: #e74454;
+    --yellow: #f9cb40;
 
-    /* --font-cl: #e7f0ea; */
-    --font-cl: #181818;
-    /* --first-cl: #08313a; */
-    --first-cl: white;
-    --second-cl: #1a5653;
-    --third-cl: #107869;
-    --link-cl: #5cd85a;
+    --header-1: 64px;
+    --header-2: 48px;
+    --header-3: 42px;
+    --header-4: 32px;
 
-    --box-shadow: 0px 0px 3px var(--third-cl);
+    --text-medium: 10px;
+    --text-regular: 16px;
+    --text-light: 13px;
+
+    --font-weight-bold: 700;
+    --font-weight-semi-bold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+    --font-weight-light: 300;
   }
 
-  ::selection {
-    background-color: var(--link-cl);
+  body {
+    overflow: overlay;
+    background-color: var(--white);
   }
 
-  ::-webkit-scrollbar {
+  span {
+    color: var(--primary-cl);
+  }
+
+  .btn {
+    margin: 2px;
+    padding: .375rem 1.5rem;
+    border-radius: 6px;
+
+    font-size: var(--text-regular);
+    font-weight: var(--font-weight-medium);
+
+    &, * {
+      transition: .2s;
+      color: var(--primary-font-cl) !important;
+      text-decoration: none;
+    }
+  }
+
+  .btn.btn-primary:focus,
+  .navbar-toggler:focus,
+  .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(67, 237, 116, .8);
+  }
+
+  .btn.btn-primary {
+    margin: 5px;
+
+    background-color: var(--primary-cl);
+    border-color: var(--primary-cl-light);
+
+    &:hover *,
+    &:hover {
+      color: var(--white) !important;
+      background-color: var(--primary-cl-light);
+    }
+  }
+
+  *::selection {
+    color: var(--white);
+    background-color: var(--primary-cl);
+  }
+
+  *::-webkit-scrollbar {
     width: 6px;
 
     background-color: transparent;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--third-cl);
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow: overlay;
-
-    background-color: var(--first-cl);
+  *::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: var(--primary-cl);
   }
 
   .pace {
@@ -73,21 +107,11 @@ export const GlobalStyle = createGlobalStyle`
       right: 100%;
       z-index: 99;
 
-      background-color: var(--third-cl);
+      background-color: var(--primary-cl);
     }
   }
 
   .pace-inactive {
     display: none;
-  }
-
-  @media (max-width: 425px) {
-    * {
-      font-size: min(4vw, 1.8rem);
-    }
-
-    h1 {
-      font-size: min(5.6vw, 2rem);
-    }
   }
 `

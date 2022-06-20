@@ -1,17 +1,15 @@
-import type { NextPage } from 'next'
-
-import Link from '../components/Link'
+import Twemoji from '../components/Twemojis'
 
 
-const Home: NextPage = () =>
+const Home = () => 
   <>
     <h1>Home</h1>
     <br/>
 
-    <div>
-      <Link link='/signin' text='Sign in' preLoad/>
-      <Link link='/signup' text='Sign up' preLoad/>
-    </div>
+    <p>
+      Esterame un poco
+      <Twemoji emojis=':question: :smiling_imp: :apple: :question: 1f1e6'/>
+    </p>
   </>
 
 
